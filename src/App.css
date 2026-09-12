@@ -1,0 +1,431 @@
+/* ===== Layout ===== */
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+.content {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  padding: 40px 44px 52px;
+  box-shadow: 0 16px 40px rgba(46, 15, 56, 0.15);
+  backdrop-filter: blur(6px);
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #2e0f38;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 6px;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: none;
+  background: transparent;
+  padding: 10px 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #6b4676;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.nav-btn .nav-icon {
+  font-size: 1.2rem;
+}
+
+.nav-btn .nav-label {
+  font-size: 0.75rem;
+}
+
+.nav-btn:hover {
+  background: rgba(166, 133, 201, 0.2);
+}
+
+.nav-btn.active {
+  background: #a685c9;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ===== Shared page elements ===== */
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.filters button {
+  border: none;
+  background: rgba(166, 133, 201, 0.25);
+  color: #2e0f38;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: #a685c9;
+  color: #fff;
+}
+
+.empty-state {
+  text-align: center;
+  color: #6b4676;
+  padding: 30px 10px;
+  font-size: 0.95rem;
+}
+
+.clear-btn {
+  align-self: center;
+  background: transparent;
+  border: 1px solid #2e0f38;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #2e0f38;
+  color: #fff;
+}
+
+/* ===== Diary page ===== */
+.diary-input-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mood-picker {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mood-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.mood-btn.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.diary-textarea {
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: #2e0f38;
+}
+
+.diary-textarea:focus {
+  outline: 2px solid #a685c9;
+}
+
+.diary-save-btn {
+  align-self: flex-end;
+  border: none;
+  background: #a685c9;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.diary-save-btn:hover {
+  background: #8c68b0;
+}
+
+.diary-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diary-entry {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.diary-entry-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.diary-entry-mood {
+  font-size: 1.1rem;
+}
+
+.diary-entry-date {
+  flex: 1;
+  font-size: 0.75rem;
+  color: #6b4676;
+}
+
+.diary-delete-btn {
+  border: none;
+  background: transparent;
+  color: #a1618c;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.diary-entry-text {
+  color: #2e0f38;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+/* ===== Tasks page ===== */
+.todo-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.todo-input input {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: #2e0f38;
+}
+
+.todo-input input:focus {
+  outline: 2px solid #a685c9;
+}
+
+.todo-input button {
+  border: none;
+  background: #a685c9;
+  color: #fff;
+  padding: 0 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.todo-input button:hover {
+  background: #8c68b0;
+}
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.todo-list li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2e0f38;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.todo-list li.completed label span {
+  text-decoration: line-through;
+  color: #8c789a;
+}
+
+.todo-list .delete-btn {
+  border: none;
+  background: transparent;
+  color: #a1618c;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* ===== Timer page ===== */
+.timer-presets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.preset-btn {
+  border: none;
+  background: rgba(166, 133, 201, 0.25);
+  color: #2e0f38;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.preset-btn.active,
+.preset-btn:hover {
+  background: #a685c9;
+  color: #fff;
+}
+
+.custom-preset {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.custom-preset input {
+  width: 40px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #2e0f38;
+}
+
+.custom-preset input:focus {
+  outline: none;
+}
+
+.custom-preset span {
+  font-size: 0.75rem;
+  color: #6b4676;
+}
+
+.timer-circle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.timer-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s linear;
+}
+
+.timer-circle-inner {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fdf6ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.timer-display {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2e0f38;
+}
+
+.timer-status {
+  font-size: 0.85rem;
+  color: #a1618c;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timer-btn {
+  border: 1px solid #2e0f38;
+  background: transparent;
+  color: #2e0f38;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.timer-btn:hover {
+  background: rgba(166, 133, 201, 0.2);
+}
+
+.timer-btn.primary {
+  background: #a685c9;
+  color: #fff;
+  border: none;
+}
+
+.timer-btn.primary:hover {
+  background: #8c68b0;
+}
